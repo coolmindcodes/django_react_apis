@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  api:
+    container_name: api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - database
+
+  database:
+    container_name: application_db
+    image: mysql:8.0.11
+    restart: always
+    environment:
+      MYSQL_DATABASE: application_db
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - .data:/var/lib/mysql
+
+#docker-compose exec api exec sh
+#python manage.py makemigrations
+#python manage.py migrate
+#python manage.py createsuperuser

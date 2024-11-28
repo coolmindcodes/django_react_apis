@@ -81,8 +81,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'application_db',
         'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
+        'PASSWORD': 'root',
+        'HOST': 'database',
         'PORT': '3306',
     }
 }
@@ -129,4 +129,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# https://coursehunter.net/course/react-i-django-prakticheskoe-rukovodstvo-po-docker?lesson=5
+# https://coursehunter.net/course/react-i-django-prakticheskoe-rukovodstvo-po-docker?lesson=7

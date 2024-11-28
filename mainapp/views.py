@@ -1,9 +1,13 @@
 from django.http import JsonResponse
-from django.shortcuts import render
 from rest_framework.decorators import api_view
+
+from mainapp.models import User
+from mainapp.serializers import UserSerializer
 
 
 # Create your views here.
 @api_view(['GET'])
 def hello(request):
-    return JsonResponse({'hello': 'world'})
+    users = User.objects.all()
+    serializer = UserSerializer(users, many=True)
+    return JsonResponse(serializer.data, safe=False)

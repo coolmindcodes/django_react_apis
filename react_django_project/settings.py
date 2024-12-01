@@ -130,3 +130,4 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # https://coursehunter.net/course/react-i-django-prakticheskoe-rukovodstvo-po-docker?lesson=7
+AUTH_USER_MODEL = 'mainapp.User'

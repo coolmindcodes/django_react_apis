@@ -34,4 +34,4 @@ class JWTAuthentication(BaseAuthentication):
 
         if user is None:
             raise  AuthenticationFailed('User not found')
-        return  (user, None)
+        return user, None
